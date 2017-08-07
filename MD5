@@ -1,0 +1,15 @@
+7c921dba53b58cedee60dce9affa3b77 *DESCRIPTION
+9f442d87748bcf7954b5c19cfd54b361 *NAMESPACE
+1263c23e9e619ae802e69ae9ff172a6c *NEWS.md
+a9e340aabf91e92061155bff6fea1268 *R/package.R
+367508dbf06b4de3249ed43f81bf385e *R/utils.R
+e707bfc4ec0fa5b71f06470d297ed770 *README.md
+c9027dca1a9a82070cb7ef929f82a512 *build/vignette.rds
+3ff82ddcc79bdcc9d2d3110a74c8568f *inst/doc/the_GeoMongo_package.R
+d398fd9a490a3622cf31a8a52ba0e4f0 *inst/doc/the_GeoMongo_package.Rmd
+4b26a8a2311e6ec2de99f224af2ff840 *inst/doc/the_GeoMongo_package.html
+a7a911d462faa2579c5a33f50d8530c2 *man/geomongo.Rd
+bce27cb0481aaf6962c1d319f78d29f4 *man/json_schema_validator.Rd
+e94a3a6dd6494a2e30b6091e5be301d1 *man/mongodb_console.Rd
+ed744c6b9a2540a02f4e6c0e33886f02 *vignettes/leaflet1.png
+d398fd9a490a3622cf31a8a52ba0e4f0 *vignettes/the_GeoMongo_package.Rmd
