@@ -1,8 +1,8 @@
 Package: GeoMongo
 Type: Package
 Title: Geospatial Queries Using 'PyMongo'
-Version: 1.0.0
-Date: 2017-08-07
+Version: 1.0.1
+Date: 2017-09-09
 Author: Lampros Mouselimis <mouselimislampros@gmail.com>
 Maintainer: Lampros Mouselimis <mouselimislampros@gmail.com>
 BugReports: https://github.com/mlampros/GeoMongo/issues
@@ -19,6 +19,6 @@ LazyData: true
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2017-08-07 11:02:00 UTC; lampros
+Packaged: 2017-09-09 12:40:59 UTC; lampros
 Repository: CRAN
-Date/Publication: 2017-08-07 11:53:47 UTC
+Date/Publication: 2017-09-09 15:03:13 UTC

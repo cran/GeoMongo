@@ -173,7 +173,11 @@ geomongo <- R6::R6Class("geomongo",
                             if (!inherits(GEOMETRY_NAME, "character")) { stop("the 'GEOMETRY_NAME' parameter should be of type character", call. = F) }
                             if (TYPE_DATA %in% c("folder", "file")) {
                               if (!inherits(DATA, "character")) stop("In case that the TYPE_DATA parameter is either a 'folder' or a 'file', then the DATA parameter should be a valid path to a file", call. = F)
-                              if (!file.exists(DATA)) stop("the path to the DATA parameter does not exist", call. = F)
+                              if (TYPE_DATA == "file") {
+                                if (!file.exists(DATA)) stop("the path to the 'file' parameter does not exist", call. = F)}
+                              if (TYPE_DATA == "folder") {
+                                if (!dir.exists(DATA)) stop("the path to the 'folder' parameter does not exist", call. = F)
+                              }
                             }
 
                             private$copy_collection = COLLECTION
@@ -520,9 +524,11 @@ json_schema_validator = function(json_data = NULL, json_schema = NULL) {
 #'
 #'
 #' @param Argument a character string specifying the mongodb shell command to run from within an R-session
+#' @param ... the \emph{ellipsis} (...) parameter allows a unix-user (windows-user) to give additional parameters to the base-R \emph{system() (shell())} function which is run in background.
 #' @details
 #' MongoDB shell commands are important for instance if someone has to import/export bulk data to a mongo database. This R function utilizes the \emph{system} base function to run the mongodb shell command from
 #' within an R-session. See the reference links for more details.
+#' The \emph{ellipsis} (...) parameter could be used for instance to disallow messages be printed in the console (on unix by using \emph{ignore.stdout} and \emph{ignore.stderr}).
 #' @export
 #' @references https://docs.mongodb.com/manual/reference/program/mongoimport/,  https://docs.mongodb.com/manual/reference/program/mongoexport/
 #' @examples
@@ -535,18 +541,18 @@ json_schema_validator = function(json_data = NULL, json_schema = NULL) {
 #' mongodb_console(Argument = ARGs)
 #' }
 
-mongodb_console = function(Argument = NULL) {
+mongodb_console = function(Argument = NULL, ...) {
 
   if (!inherits(Argument, "character")) { stop("the 'Argument' parameter should be of type character", call. = F) }
 
   if (.Platform$OS.type == "unix") {
 
-    system(Argument)
+    system(command = Argument, ...)
   }
 
   if (.Platform$OS.type == "windows") {
 
-    shell(Argument)
+    shell(cmd = Argument, ...)
   }
 
   invisible()
